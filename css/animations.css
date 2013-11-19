@@ -1,0 +1,15 @@
+.highlight-animation.mute-add,
+.highlight-animation.mute-remove {
+    transition: 0.2s linear all;
+}
+
+.highlight-animation.mute-add,
+.highlight-animation.mute-remove.mute-remove-active {
+    opacity: 1;
+}
+
+.highlight-animation.mute,
+.highlight-animation.mute-remove,
+.highlight-animation.mute-add.mute-add-active {
+    opacity: 0.2;
+}

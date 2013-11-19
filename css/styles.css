@@ -1,0 +1,139 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.column {
+    width: 200px;
+    margin-left: 5px;
+}
+
+.column .header {
+    padding: 0 8px;
+    line-height: 24px;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 0px;
+}
+
+.column h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-transform: none;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.column ul li {
+    color: #333;
+    list-style-type: none;
+    font-size: 13px;
+    text-align: right;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.header.standard {
+    background-color: #457b97;
+}
+
+.header.highmemory {
+    background-color: #727372;
+}
+
+.header.highcpu {
+    background-color: #a66a48;
+}
+
+.header.highio {
+    background-color: #f60;
+}
+
+.instance {
+    background-color: #eef0f2;
+    border: 1px solid #eef0f2;
+    padding: 10px;
+    margin-bottom: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.current-standard {
+    border: 1px solid #457b97;
+
+}
+
+.current-highmemory {
+    border: 1px solid #727372;
+}
+
+.current-highcpu {
+    border: 1px solid #a66a48;
+}
+
+.current-highio {
+    border: 1px solid #f60;
+}
+
+.column ul li span {
+    color: #949ca1;
+    font-size: 11px;
+    text-align: left;
+    display: inline-block;
+    width: 35px;
+    margin-left: 5px;
+}
+
+.column .left span {
+    color: #949ca1;
+    font-size: 11px;
+    text-align: left;
+    display: inline-block;
+    width: 45px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.pph {
+    font-weight: bold;
+    font-size: 18px;
+}
