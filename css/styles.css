@@ -11,19 +11,25 @@ body {
     margin: 0 auto;
 }
 
+.col-md-2.column {
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+
 .column {
     width: 200px;
     margin-left: 5px;
 }
 
 .column .header {
-    padding: 0 8px;
+    padding: 10px;
     line-height: 24px;
     background: rgba(0, 0, 0, 0.2);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 .column h2 {
@@ -32,7 +38,7 @@ body {
     text-transform: none;
     font-size: 15px;
     color: #fff;
-    margin-bottom: 5px;
+    margin: 0px;
 }
 
 .column ul li {
@@ -42,22 +48,6 @@ body {
     text-align: right;
     cursor: pointer;
     margin: 0px;
-}
-
-.header.standard {
-    background-color: #457b97;
-}
-
-.header.highmemory {
-    background-color: #727372;
-}
-
-.header.highcpu {
-    background-color: #a66a48;
-}
-
-.header.highio {
-    background-color: #f60;
 }
 
 .instance {
@@ -71,23 +61,6 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-}
-
-.current-standard {
-    border: 1px solid #457b97;
-
-}
-
-.current-highmemory {
-    border: 1px solid #727372;
-}
-
-.current-highcpu {
-    border: 1px solid #a66a48;
-}
-
-.current-highio {
-    border: 1px solid #f60;
 }
 
 .column ul li span {
@@ -136,4 +109,37 @@ body {
 .pph {
     font-weight: bold;
     font-size: 18px;
+}
+
+.header.standard {
+    background-color: #457b97;
+}
+
+.header.highmemory {
+    background-color: #727372;
+}
+
+.header.highcpu {
+    background-color: #a66a48;
+}
+
+.header.highio {
+    background-color: #f60;
+}
+
+.current-standard {
+    border: 1px solid #457b97;
+
+}
+
+.current-highmemory {
+    border: 1px solid #727372;
+}
+
+.current-highcpu {
+    border: 1px solid #a66a48;
+}
+
+.current-highio {
+    border: 1px solid #f60;
 }

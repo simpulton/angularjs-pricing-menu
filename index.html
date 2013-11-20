@@ -4,20 +4,21 @@
         <meta charset="utf-8">
         <title>Joyent Pricing Menu with AngularJS</title>
 
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/animations.css"/>
     </head>
 
     <body ng-controller="MainCtrl">
 
-        <div class="container">
-            <div class="span2 column" ng-repeat="price in pricing">
-                <div class="header {{price.category}}">
-                    <h2>{{price.display}}</h2>
+        <div class="row container">
+            <div class="col-md-2 column" ng-repeat="category in categories">
+                <div class="header {{category.name}}">
+                    <h2>{{category.display}}</h2>
                 </div>
-                <div class="instance clearfix" ng-repeat="instance in price.instances"
-                     ng-click="setCurrentInstance(instance);setCurrentPricingCategory(price.category)" ng-class="{'current-{{price.category}}':isCurrentInstance(instance)}">
+                <div class="instance clearfix" ng-repeat="instance in instances | filter:{category:category.name}"
+                     ng-click="setCurrentInstance(instance);setCurrentPricingCategory(category.name)"
+                     ng-class="{'current-{{category.name}}':isCurrentInstance(instance)}">
                     <div class="left pph">
                         ${{instance.price}}<br><span>per hour</span>
                     </div>
@@ -42,8 +43,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="header {{price.category}}">
-                    <h2>{{instanceCounts()[price.category]}} Instances</h2>
+                <div class="header {{category.name}}">
+                    <h2>{{instanceCounts()[category.name]}} Instances</h2>
                 </div>
             </div>
         </div>
