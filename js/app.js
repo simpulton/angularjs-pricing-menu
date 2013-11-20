@@ -2,7 +2,7 @@ angular.module('website', ['ngAnimate', 'firebase'])
     .controller('MainCtrl', ['$scope', '$window', 'InstanceService', 'TotalCountService',
         function ($scope, $window, InstanceService, TotalCountService) {
             $scope.categories = InstanceService.getCategories();
-            $scope.instances = InstanceService. getInstances();
+            $scope.instances = InstanceService.getInstances();
 
             // INSTANCE
             $scope.currentInstance = null;
@@ -103,7 +103,7 @@ angular.module('website', ['ngAnimate', 'firebase'])
 
         var getInstances = function () {
             return instances;
-        }
+        };
 
         return {
             getCategories: getCategories,

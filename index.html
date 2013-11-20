@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html ng-app="website">
-    <head>
-        <meta charset="utf-8">
-        <title>Joyent Pricing Menu with AngularJS</title>
+<head>
+    <meta charset="utf-8">
+    <title>Joyent Pricing Menu with AngularJS</title>
 
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/animations.css"/>
-    </head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css"/>
+</head>
 
-    <body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 column" ng-repeat="category in categories">
-                    <div class="header {{category.name}}">
-                        <h2>{{category.display}}</h2>
-                    </div>
-                    <div class="instance clearfix" ng-repeat="instance in instances | filter:{category:category.name}"
-                         ng-click="setCurrentInstance(instance);setCurrentPricingCategory(category.name)"
-                         ng-class="{'current-{{category.name}}':isCurrentInstance(instance)}">
-                        <div class="left pph">
-                            ${{instance.price}}<br><span>per hour</span>
-                        </div>
-                        <div class="right">
-                            <ul>
-                                <li ng-mouseenter="setCurrentInstanceCategory('ram')"
-                                    ng-mouseleave="setCurrentInstanceCategory(null)"
-                                    ng-class="{mute:isMuted('ram')}" class="highlight-animation">
-                                    {{instance.ram}} <span>GIB</span></li>
-                                <li ng-mouseenter="setCurrentInstanceCategory('cpu')"
-                                    ng-mouseleave="setCurrentInstanceCategory(null)"
-                                    ng-class="{mute:isMuted('cpu')}" class="highlight-animation">
-                                    {{instance.cpu}} <span>vCPU</span></li>
-                                <li ng-mouseenter="setCurrentInstanceCategory('disk')"
-                                    ng-mouseleave="setCurrentInstanceCategory(null)"
-                                    ng-class="{mute:isMuted('disk')}" class="highlight-animation">
-                                    {{instance.disk}} <span>GB</span></li>
-                                <li ng-mouseenter="setCurrentInstanceCategory('network')"
-                                    ng-mouseleave="setCurrentInstanceCategory(null)"
-                                    ng-class="{mute:isMuted('network')}" class="highlight-animation">
-                                    {{instance.network}} <span>Gbit/s</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header {{category.name}}">
-                        <h2>{{instanceCounts()[category.name]}} Instances</h2>
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 column" ng-repeat="category in categories">
+            <div class="header {{category.name}}">
+                <h2>{{category.display}}</h2>
+            </div>
+            <div class="instance clearfix" ng-repeat="instance in instances | filter:{category:category.name}"
+                 ng-click="setCurrentInstance(instance);setCurrentPricingCategory(category.name)"
+                 ng-class="{'current-{{category.name}}':isCurrentInstance(instance)}">
+                <div class="left pph">
+                    ${{instance.price}}<br><span>per hour</span>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li ng-mouseenter="setCurrentInstanceCategory('ram')"
+                            ng-mouseleave="setCurrentInstanceCategory(null)"
+                            ng-class="{mute:isMuted('ram')}" class="highlight-animation">
+                            {{instance.ram}} <span>GIB</span></li>
+                        <li ng-mouseenter="setCurrentInstanceCategory('cpu')"
+                            ng-mouseleave="setCurrentInstanceCategory(null)"
+                            ng-class="{mute:isMuted('cpu')}" class="highlight-animation">
+                            {{instance.cpu}} <span>vCPU</span></li>
+                        <li ng-mouseenter="setCurrentInstanceCategory('disk')"
+                            ng-mouseleave="setCurrentInstanceCategory(null)"
+                            ng-class="{mute:isMuted('disk')}" class="highlight-animation">
+                            {{instance.disk}} <span>GB</span></li>
+                        <li ng-mouseenter="setCurrentInstanceCategory('network')"
+                            ng-mouseleave="setCurrentInstanceCategory(null)"
+                            ng-class="{mute:isMuted('network')}" class="highlight-animation">
+                            {{instance.network}} <span>Gbit/s</span></li>
+                    </ul>
                 </div>
             </div>
+            <div class="header {{category.name}}">
+                <h2>{{instanceCounts()[category.name]}} Instances</h2>
+            </div>
         </div>
+    </div>
+</div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-        <script src="//code.angularjs.org/1.2.1/angular-animate.min.js"></script>
-        <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-        <script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="//code.angularjs.org/1.2.1/angular-animate.min.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
 
-        <script src="js/app.js"></script>
-    </body>
+<script src="js/app.js"></script>
+</body>
 </html>
