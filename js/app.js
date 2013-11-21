@@ -45,7 +45,7 @@ angular.module('website', ['ngAnimate', 'firebase'])
                 if ($scope.currentPricingCategory !== null) {
                     TotalCountService.decrementInstanceCount($scope.currentPricingCategory);
                 }
-            }
+            };
 
         }])
     .factory('TotalCountService', ['$firebase', function ($firebase) {
@@ -54,7 +54,7 @@ angular.module('website', ['ngAnimate', 'firebase'])
 
         var getInstanceCounts = function () {
             return instanceCounts;
-        }
+        };
 
         var incrementInstanceCount = function (type) {
             ref.child(type).transaction(function (current_value) {
