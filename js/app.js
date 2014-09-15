@@ -1,6 +1,6 @@
-angular.module('website', ['ngAnimate', 'firebase'])
-    .controller('MainCtrl', ['$scope', '$window', 'InstanceService', 'TotalCountService',
-        function ($scope, $window, InstanceService, TotalCountService) {
+angular.module('website', ['ngAnimate'])
+    .controller('MainCtrl', ['$scope', '$window', 'InstanceService',
+        function ($scope, $window, InstanceService) {
             $scope.categories = InstanceService.getCategories();
             $scope.instances = InstanceService.getInstances();
 
@@ -29,51 +29,8 @@ angular.module('website', ['ngAnimate', 'firebase'])
             // COUNTS
             $scope.currentPricingCategory = null;
 
-            $scope.instanceCounts = function () {
-                return TotalCountService.getInstanceCounts();
-            };
-
-            $scope.setCurrentPricingCategory = function (category) {
-                if ($scope.currentPricingCategory != null) {
-                    TotalCountService.decrementInstanceCount($scope.currentPricingCategory);
-                }
-                $scope.currentPricingCategory = category;
-                TotalCountService.incrementInstanceCount($scope.currentPricingCategory);
-            };
-
-            $window.onbeforeunload = function (event) {
-                if ($scope.currentPricingCategory !== null) {
-                    TotalCountService.decrementInstanceCount($scope.currentPricingCategory);
-                }
-            };
-
         }])
-    .factory('TotalCountService', ['$firebase', function ($firebase) {
-        var ref = new Firebase('https://ng-menu.firebaseio.com/instance-count');
-        var instanceCounts = $firebase(ref);
-
-        var getInstanceCounts = function () {
-            return instanceCounts;
-        };
-
-        var incrementInstanceCount = function (type) {
-            ref.child(type).transaction(function (current_value) {
-                return current_value + 1;
-            });
-        };
-
-        var decrementInstanceCount = function (type) {
-            ref.child(type).transaction(function (current_value) {
-                return current_value - 1;
-            });
-        };
-
-        return {
-            getInstanceCounts: getInstanceCounts,
-            decrementInstanceCount: decrementInstanceCount,
-            incrementInstanceCount: incrementInstanceCount
-        }
-    }])
+    
     .factory('InstanceService', function () {
         var categories = [
             {name: 'standard', display: 'Standard'},
