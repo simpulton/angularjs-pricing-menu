@@ -18,7 +18,7 @@
                 <h2>{{category.display}}</h2>
             </div>
             <div class="instance clearfix" ng-repeat="instance in instances | filter:{category:category.name}"
-                 ng-click="setCurrentInstance(instance);setCurrentPricingCategory(category.name)"
+                 ng-click="setCurrentInstance(instance)"
                  ng-class="{'current-{{category.name}}':isCurrentInstance(instance)}">
                 <div class="left pph">
                     ${{instance.price}}<br><span>per hour</span>
@@ -43,9 +43,6 @@
                             {{instance.network}} <span>Gbit/s</span></li>
                     </ul>
                 </div>
-            </div>
-            <div class="header {{category.name}}">
-                <h2>{{instanceCounts()[category.name]}} Instances</h2>
             </div>
         </div>
     </div>

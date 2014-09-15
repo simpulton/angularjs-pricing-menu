@@ -1,36 +1,27 @@
 angular.module('website', ['ngAnimate'])
-    .controller('MainCtrl', ['$scope', '$window', 'InstanceService',
-        function ($scope, $window, InstanceService) {
-            $scope.categories = InstanceService.getCategories();
-            $scope.instances = InstanceService.getInstances();
+    .controller('MainCtrl', function ($scope, $window, InstanceService) {
+        $scope.categories = InstanceService.getCategories();
+        $scope.instances = InstanceService.getInstances();
 
-            // INSTANCE
-            $scope.currentInstance = null;
+        $scope.currentInstance = null;
+        $scope.currentInstanceCategory = null;
 
-            $scope.setCurrentInstance = function (instance) {
-                $scope.currentInstance = instance;
-            };
+        $scope.setCurrentInstance = function (instance) {
+            $scope.currentInstance = instance;
+        };
 
-            $scope.isCurrentInstance = function (instance) {
-                return $scope.currentInstance === instance;
-            };
+        $scope.isCurrentInstance = function (instance) {
+            return $scope.currentInstance === instance;
+        };
 
-            // INSTANCE CATEGORY
-            $scope.currentInstanceCategory = null;
+        $scope.setCurrentInstanceCategory = function (category) {
+            $scope.currentInstanceCategory = category;
+        };
 
-            $scope.setCurrentInstanceCategory = function (category) {
-                $scope.currentInstanceCategory = category;
-            };
-
-            $scope.isMuted = function (category) {
-                return $scope.currentInstanceCategory !== null && $scope.currentInstanceCategory !== category;
-            };
-
-            // COUNTS
-            $scope.currentPricingCategory = null;
-
-        }])
-    
+        $scope.isMuted = function (category) {
+            return $scope.currentInstanceCategory !== null && $scope.currentInstanceCategory !== category;
+        };
+    })
     .factory('InstanceService', function () {
         var categories = [
             {name: 'standard', display: 'Standard'},
