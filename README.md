@@ -1,4 +1,4 @@
-angularjs-pricing-menu
+Menu with AngularJS
 ======================
 
-A pricing menu using AngularJS and Firebase
+A Joyet style pricing menu using AngularJS.
