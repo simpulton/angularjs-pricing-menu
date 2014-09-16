@@ -4,7 +4,7 @@ angular.module('website', ['ngAnimate'])
         $scope.instances = InstanceService.getInstances();
 
         $scope.currentInstance = null;
-        $scope.currentInstanceCategory = null;
+        $scope.currentInstanceFeature = null;
 
         $scope.setCurrentInstance = function (instance) {
             $scope.currentInstance = instance;
@@ -14,12 +14,12 @@ angular.module('website', ['ngAnimate'])
             return $scope.currentInstance === instance;
         };
 
-        $scope.setCurrentInstanceCategory = function (category) {
-            $scope.currentInstanceCategory = category;
+        $scope.setCurrentInstanceFeature = function (feature) {
+            $scope.currentInstanceFeature = feature;
         };
 
-        $scope.isMuted = function (category) {
-            return $scope.currentInstanceCategory !== null && $scope.currentInstanceCategory !== category;
+        $scope.isMuted = function (feature) {
+            return $scope.currentInstanceFeature !== null && $scope.currentInstanceFeature !== feature;
         };
     })
     .factory('InstanceService', function () {

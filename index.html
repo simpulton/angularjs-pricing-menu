@@ -25,20 +25,20 @@
                 </div>
                 <div class="right">
                     <ul>
-                        <li ng-mouseenter="setCurrentInstanceCategory('ram')"
-                            ng-mouseleave="setCurrentInstanceCategory(null)"
+                        <li ng-mouseenter="setCurrentInstanceFeature('ram')"
+                            ng-mouseleave="setCurrentInstanceFeature(null)"
                             ng-class="{mute:isMuted('ram')}" class="highlight-animation">
                             {{instance.ram}} <span>GIB</span></li>
-                        <li ng-mouseenter="setCurrentInstanceCategory('cpu')"
-                            ng-mouseleave="setCurrentInstanceCategory(null)"
+                        <li ng-mouseenter="setCurrentInstanceFeature('cpu')"
+                            ng-mouseleave="setCurrentInstanceFeature(null)"
                             ng-class="{mute:isMuted('cpu')}" class="highlight-animation">
                             {{instance.cpu}} <span>vCPU</span></li>
-                        <li ng-mouseenter="setCurrentInstanceCategory('disk')"
-                            ng-mouseleave="setCurrentInstanceCategory(null)"
+                        <li ng-mouseenter="setCurrentInstanceFeature('disk')"
+                            ng-mouseleave="setCurrentInstanceFeature(null)"
                             ng-class="{mute:isMuted('disk')}" class="highlight-animation">
                             {{instance.disk}} <span>GB</span></li>
-                        <li ng-mouseenter="setCurrentInstanceCategory('network')"
-                            ng-mouseleave="setCurrentInstanceCategory(null)"
+                        <li ng-mouseenter="setCurrentInstanceFeature('network')"
+                            ng-mouseleave="setCurrentInstanceFeature(null)"
                             ng-class="{mute:isMuted('network')}" class="highlight-animation">
                             {{instance.network}} <span>Gbit/s</span></li>
                     </ul>
@@ -55,3 +55,24 @@
 <script src="js/app.js"></script>
 </body>
 </html>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 column">
+            <div class="header {{category.name}}">
+                <h2>{{category.display}}</h2>
+            </div>
+            <div class="instance clearfix">
+                <div class="left pph">${{instance.price}} per hour</div>
+                <div class="right">
+                    <ul>
+                        <li>{{instance.ram}} GIB</li>
+                        <li>{{instance.cpu}} vCPU</li>
+                        <li>{{instance.disk}} GB</li>
+                        <li>{{instance.network}} Gbit/s</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
