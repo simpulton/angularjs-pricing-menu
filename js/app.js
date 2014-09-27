@@ -1,5 +1,5 @@
 angular.module('website', ['ngAnimate'])
-    .controller('MainCtrl', function ($scope, $window, InstanceService) {
+    .controller('MainCtrl', function ($scope, InstanceService) {
         $scope.categories = InstanceService.getCategories();
         $scope.instances = InstanceService.getInstances();
 
